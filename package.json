@@ -33,7 +33,7 @@
     "npm": ">=6.0.0"
   },
   "workspaces": [
-    "plugins/*"
+    "src/plugins/*"
   ],
   "license": "MIT"
 }
