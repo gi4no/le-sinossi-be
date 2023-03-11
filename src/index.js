@@ -1,4 +1,4 @@
-'use strict';
+"use strict";
 
 module.exports = {
   /**
@@ -7,7 +7,36 @@ module.exports = {
    *
    * This gives you an opportunity to extend code.
    */
-  register(/*{ strapi }*/) {},
+  register({ strapi }) {
+    const extensionService = strapi.service("plugin::graphql.extension");
+
+    extensionService.use(({ strapi }) => ({
+      typeDefs: `
+        type Query {
+          article(slug: String!): ArticleEntityResponse
+        }
+      `,
+      resolvers: {
+        Query: {
+          article: {
+            resolve: async (_parent, args) => {
+              const { toEntityResponse } = strapi.service(
+                "plugin::graphql.format"
+              ).returnTypes;
+
+              const data = await strapi.db
+                .query("api::article.article")
+                .findOne({
+                  where: { slug: args.slug },
+                });
+
+              return toEntityResponse(data);
+            },
+          },
+        },
+      },
+    }));
+  },
 
   /**
    * An asynchronous bootstrap function that runs before

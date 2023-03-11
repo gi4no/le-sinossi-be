@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_atoms_table_details",
+  "info": {
+    "displayName": "Table Details"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "value": {
+      "type": "string"
+    }
+  }
+}

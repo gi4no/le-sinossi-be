@@ -1,0 +1,28 @@
+{
+  "collectionName": "components_atoms_highlights",
+  "info": {
+    "displayName": "Highlights",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "article": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::article.article"
+    },
+    "intro_title": {
+      "type": "string"
+    },
+    "article_1": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::article.article"
+    },
+    "article_2": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::article.article"
+    }
+  }
+}

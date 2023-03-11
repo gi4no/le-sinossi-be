@@ -1,0 +1,59 @@
+{
+  "kind": "collectionType",
+  "collectionName": "articles",
+  "info": {
+    "singularName": "article",
+    "pluralName": "articles",
+    "displayName": "Article",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "category": {
+      "type": "enumeration",
+      "enum": [
+        "Film",
+        "Serie Tv",
+        "Cartone",
+        "Documentario"
+      ]
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "stars": {
+      "max": 5,
+      "min": 1,
+      "unique": false,
+      "default": 1,
+      "required": false,
+      "type": "decimal"
+    },
+    "description": {
+      "type": "richtext"
+    },
+    "details": {
+      "type": "component",
+      "repeatable": true,
+      "component": "atoms.table-details"
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "title"
+    }
+  }
+}

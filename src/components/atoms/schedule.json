@@ -1,0 +1,12 @@
+{
+  "collectionName": "components_atoms_schedules",
+  "info": {
+    "displayName": "Schedule"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    }
+  }
+}

@@ -1,0 +1,36 @@
+{
+    "kind": "collectionType",
+    "collectionName": "schedules",
+    "info": {
+        "singularName": "schedule",
+        "pluralName": "schedules",
+        "displayName": "Schedule"
+    },
+    "options": {
+        "draftAndPublish": true,
+        "comment": ""
+    },
+    "attributes": {
+        "title": {
+            "type": "string",
+            "required": true,
+            "maxLength": 40
+        },
+        "image": {
+            "type": "string",
+            "maxLength": 120
+        },
+        "description": {
+            "type": "text",
+            "maxLength": 120
+        },
+        "trama": {
+            "type": "text",
+            "maxLength": 120
+        },
+        "slug": {
+            "type": "uid",
+            "targetField": "title"
+        }
+    }
+}
